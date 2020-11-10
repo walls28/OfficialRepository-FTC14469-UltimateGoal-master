@@ -1,0 +1,92 @@
+package org.firstinspires.ftc.teamcode.ftc16072;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.Servo;
+public class auto3 {
+
+
+
+    @Autonomous(name = "auto3", group = "autonomous")
+    public class  autonomousPractice extends LinearOpMode {
+
+        private Servo Gripper;
+
+        private DcMotor leftjerry = hardwareMap.dcMotor.get("leftjerry");
+        private DcMotor rightjerry = hardwareMap.dcMotor.get("rightjerry");
+
+        public void runOpMode() {
+
+
+            public void MotorPower (double x) {
+
+
+                leftjerry.setPower(x);
+                rightjerry.setPower(x);
+
+            }
+
+            leftjerry.setDirection(DcMotorSimple.Direction.FORWARD);
+            rightjerry.setDirection(DcMotorSimple.Direction.REVERSE);
+
+            Gripper = hardwareMap.servo.get("Gripper");
+            Gripper.setDirection(Servo.Direction.FORWARD);
+
+
+            waitForStart();
+
+            MotorPower(0.5);
+
+            sleep(10000);
+
+            MotorPower(0);
+
+
+
+            MotorPower(-0.5);
+
+            sleep(5000);
+
+            MotorPower(0);
+
+            rightjerry.setPower(0.5);
+            sleep(80)
+            MotorPower(0);
+
+            Gripper.setPosition(1);
+            sleep(2000);
+            Gripper.setPosition(0);
+
+            rightjerry.setPower(0.5);
+            sleep(80)
+            MotorPower(0);
+
+            Gripper.setPosition(1);
+            sleep(2000);
+            Gripper.setPosition(0);
+
+            rightjerry.setPower(0.5);
+            sleep(80)
+            MotorPower(0);
+
+            Gripper.setPosition(1);
+            sleep(2000);
+            Gripper.setPosition(0);
+
+            leftjerry.setPower(0.5);
+            sleep(240)
+            MotorPower(0);
+
+            MotorPower(0.5);
+
+            sleep(2500);
+
+            MotorPower(0);
+        }
+
+        private void MotorPower(double v) {
+        }
+
+    }
+}
